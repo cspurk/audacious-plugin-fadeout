@@ -1,0 +1,53 @@
+# Audacious FadeOut Plugin Localization.
+# Copyright (C) 2013 Christian Spurk
+# This file is distributed under the same license as the plugin itself.
+# Christian Spurk <mail@code.chriki.de>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: audacious-plugin-fadeout 3.1.0-1.0\n"
+"Report-Msgid-Bugs-To: mail@code.chriki.de\n"
+"POT-Creation-Date: 2013-02-24 18:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: audacious-plugin-fadeout.c:151
+#, c-format
+msgid "Could not create the thread for fading out: %s"
+msgstr "Ein Thread für das Ausfaden konnte nicht erstellt werden: %s"
+
+#: audacious-plugin-fadeout.c:243
+msgctxt "fade out menu action"
+msgid "Fade out"
+msgstr "Ausblenden"
+
+#: audacious-plugin-fadeout.c:276
+msgid "About FadeOut Plugin"
+msgstr "Über das FadeOut Plugin"
+
+#: audacious-plugin-fadeout.c:276
+msgid ""
+"FadeOut Plugin\n"
+"By Christian Spurk 2008–2013.\n"
+"\n"
+"Provides a menu entry for smoothly fading out any playing song before "
+"eventually stopping playback."
+msgstr ""
+"FadeOut Plugin\n"
+"Von Christian Spurk 2008–2013.\n"
+"\n"
+"Stellt einen Menü-Befehl bereit, mit dem der gerade laufende Titel sanft "
+"ausgeblendet werden kann, ehe die Wiedergabe stoppt."
+
+#: audacious-plugin-fadeout.c:318
+msgid "FadeOut duration (seconds):"
+msgstr "Dauer des Ausblendens (Sekunden)"
+
+#: audacious-plugin-fadeout.c:347
+msgid "FadeOut Plugin Configuration"
+msgstr "FadeOut-Plugin-Konfiguration"
