@@ -44,8 +44,6 @@ static void fadeout_start(gint *channels, gint *rate);
 static void fadeout_process(gfloat **d, gint *samples);
 static void fadeout_flush(void);
 static void fadeout_finish(gfloat **d, gint *samples);
-static gint fadeout_decoder_to_output_time(gint time);
-static gint fadeout_output_to_decoder_time(gint time);
 
 /* whether the plugin is active or not */
 static gboolean plugin_active = FALSE;
@@ -72,9 +70,7 @@ AUD_EFFECT_PLUGIN
 	.start = fadeout_start,
 	.process = fadeout_process,
 	.flush = fadeout_flush,
-	.finish = fadeout_finish,
-	.decoder_to_output_time = fadeout_decoder_to_output_time,
-	.output_to_decoder_time = fadeout_output_to_decoder_time
+	.finish = fadeout_finish
 )
 
 /* a GSourceFunc which stops the audio playback and our fading thread (if it
@@ -195,18 +191,6 @@ static void fadeout_finish(gfloat **d, gint *samples)
 	}
 }
 
-/* plugin hook: no special implementation required here. */
-static gint fadeout_decoder_to_output_time(gint time)
-{
-	return time;
-}
-
-/* plugin hook: no special implementation required here. */
-static gint fadeout_output_to_decoder_time(gint time)
-{
-	return time;
-}
-
 /* Calculates the vol_reduction_amount from the given number of seconds. */
 static gdouble calculate_vol_reduction_amount(gdouble seconds)
 {
@@ -274,7 +258,7 @@ static void about(void)
 
 	audgui_simple_message (&about_dialog, GTK_MESSAGE_INFO,
 			_("About FadeOut Plugin"), _("FadeOut Plugin\n"
-					"By Christian Spurk 2008–2013.\n\n"
+					"By Christian Spurk 2008–2014.\n\n"
 					"Provides a menu entry for smoothly fading out any "
 					"playing song before eventually stopping playback."));
 }

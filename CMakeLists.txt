@@ -1,5 +1,5 @@
 ## build file for the Audacious FadeOut plugin
-## © 2009–2013 by Christian Spurk
+## © 2009–2014 by Christian Spurk
 
 ## only tested with this version – will probably work with older versions, too
 cmake_minimum_required(VERSION 2.8.7)
@@ -20,7 +20,7 @@ include(GettextTranslate)
 
 ## set the package name and version
 set(_pkg_name "audacious-plugin-fadeout")
-set(_pkg_version "3.1.0-1.0")
+set(_pkg_version "3.4.0-1.0")
 
 ## find the directories to which to install the plugin and its translations
 string(REGEX REPLACE "/$" "" _home_dir "$ENV{HOME}")
@@ -42,7 +42,7 @@ set(_pot_file ${_pkg_name}.pot)
 #####################
 
 ## create targets for compiling and linking the plugin
-PKG_SEARCH_MODULE(AUDACIOUS REQUIRED audacious>=3.1.0)
+PKG_SEARCH_MODULE(AUDACIOUS REQUIRED audacious>=3.4.0)
 PKG_SEARCH_MODULE(GTK REQUIRED gtk+-2.0>=2.12.0)
 add_definitions(${AUDACIOUS_CFLAGS} ${GTK_CFLAGS})
 add_definitions("'-DGETTEXT_PACKAGE=\"${_pkg_name}\"'"
