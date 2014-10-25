@@ -43,7 +43,7 @@ set(_pot_file ${_pkg_name}.pot)
 
 ## create targets for compiling and linking the plugin
 PKG_SEARCH_MODULE(AUDACIOUS REQUIRED audacious>=3.4.0)
-PKG_SEARCH_MODULE(GTK REQUIRED gtk+-2.0>=2.12.0)
+PKG_SEARCH_MODULE(GTK REQUIRED gtk+-3.0>=3.0.0)
 add_definitions(${AUDACIOUS_CFLAGS} ${GTK_CFLAGS})
 add_definitions("'-DGETTEXT_PACKAGE=\"${_pkg_name}\"'"
   "'-DLOCALEDIR=\"${LOCALEDIR}\"'")

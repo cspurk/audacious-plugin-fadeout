@@ -30,7 +30,7 @@
 #endif
 
 #include <glib/gi18n-lib.h>
-#include <gtk-2.0/gtk/gtk.h>
+#include <gtk/gtk.h>
 #include <math.h>
 
 /* section name for the plugin in the Audacious config DB */
@@ -136,11 +136,14 @@ static gpointer fading_thread(gpointer data)
 static void fade_out_cb(void)
 {
 	GError *error = NULL;
+	GThread *thread = NULL;
 
 	/* only fade out if playing and if fading is not active */
 	if (aud_drct_get_playing() && vol_reduction == 1)
 	{
-		g_thread_create((GThreadFunc) fading_thread, NULL, FALSE, &error);
+		thread = g_thread_try_new(
+				NULL, (GThreadFunc) fading_thread, NULL, &error);
+		g_thread_unref(thread);
 
 		if (error != NULL)
 		{
@@ -218,10 +221,6 @@ static gboolean init(void)
 {
 	start_up();
 
-	/* make sure the thread system is initialized */
-	if (!g_thread_supported())
-		g_thread_init(NULL);
-
 	/* create the menu item and connect it to a callback function */
 	aud_plugin_menu_add(AUD_MENU_MAIN, fade_out_cb,
 			Q_("fade out menu action|Fade out"), NULL);
@@ -285,8 +284,7 @@ static void dialog_response_cb(GtkWidget *dialog, gint responseID,
 /* Sets up the given configuration dialog by adding necessary widgets. */
 static void set_up_duration_config_dialog(GtkWidget *dialog)
 {
-	GtkWidget *label, *scale, *hbox, *spinButton, *spacerDummy;
-	GtkObject *adjustment;
+	GtkWidget *label, *scale, *hbox, *spinButton, *spacerDummy, *adjustment;
 	GtkBox *content_box =
 			GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog)));
 
@@ -308,7 +306,8 @@ static void set_up_duration_config_dialog(GtkWidget *dialog)
 	hbox = gtk_hbox_new(FALSE, 10);
 	gtk_box_pack_start(content_box, hbox, TRUE, TRUE, 0);
 
-	adjustment = gtk_adjustment_new(duration, 1.0, 10.0, 0.1, 1.0, 1.0);
+	adjustment = GTK_WIDGET(
+			gtk_adjustment_new(duration, 1.0, 10.0, 0.1, 1.0, 1.0));
 
 	spinButton = gtk_spin_button_new(GTK_ADJUSTMENT(adjustment), 0.1, 1);
 	gtk_box_pack_start(GTK_BOX(hbox), spinButton, FALSE, FALSE, 0);
@@ -329,7 +328,7 @@ static void configure(void)
 	start_up();
 
 	dialog = gtk_dialog_new_with_buttons(_("FadeOut Plugin Configuration"),
-			NULL, 0, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OK,
+			NULL, 0, _("_Cancel"), GTK_RESPONSE_CANCEL, _("_OK"),
 			GTK_RESPONSE_OK, NULL);
 	set_up_duration_config_dialog(dialog);
 	gtk_widget_show_all(dialog);

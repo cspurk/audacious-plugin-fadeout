@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: audacious-plugin-fadeout 3.1.0-1.0\n"
 "Report-Msgid-Bugs-To: mail@code.chriki.de\n"
-"POT-Creation-Date: 2014-10-25 12:34+0200\n"
+"POT-Creation-Date: 2014-10-25 13:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,21 +16,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: audacious-plugin-fadeout.c:147
+#: audacious-plugin-fadeout.c:150
 #, c-format
 msgid "Could not create the thread for fading out: %s"
 msgstr "Ein Thread für das Ausfaden konnte nicht erstellt werden: %s"
 
-#: audacious-plugin-fadeout.c:227
+#: audacious-plugin-fadeout.c:226
 msgctxt "fade out menu action"
 msgid "Fade out"
 msgstr "Ausblenden"
 
-#: audacious-plugin-fadeout.c:260
+#: audacious-plugin-fadeout.c:259
 msgid "About FadeOut Plugin"
 msgstr "Über das FadeOut Plugin"
 
-#: audacious-plugin-fadeout.c:260
+#: audacious-plugin-fadeout.c:259
 msgid ""
 "FadeOut Plugin\n"
 "By Christian Spurk 2008–2014.\n"
@@ -44,10 +44,18 @@ msgstr ""
 "Stellt einen Menü-Befehl bereit, mit dem der gerade laufende Titel sanft "
 "ausgeblendet werden kann, ehe die Wiedergabe stoppt."
 
-#: audacious-plugin-fadeout.c:302
+#: audacious-plugin-fadeout.c:300
 msgid "FadeOut duration (seconds):"
 msgstr "Dauer des Ausblendens (Sekunden)"
 
-#: audacious-plugin-fadeout.c:331
+#: audacious-plugin-fadeout.c:330
 msgid "FadeOut Plugin Configuration"
 msgstr "FadeOut-Plugin-Konfiguration"
+
+#: audacious-plugin-fadeout.c:331
+msgid "_Cancel"
+msgstr "_Abbrechen"
+
+#: audacious-plugin-fadeout.c:331
+msgid "_OK"
+msgstr "_OK"
