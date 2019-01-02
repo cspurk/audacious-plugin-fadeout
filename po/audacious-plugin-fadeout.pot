@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Christian Spurk
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Project package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Project \n"
 "Report-Msgid-Bugs-To: mail@code.chriki.de\n"
-"POT-Creation-Date: 2014-10-25 13:40+0200\n"
+"POT-Creation-Date: 2019-01-02 19:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,41 +16,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: audacious-plugin-fadeout.c:150
-#, c-format
-msgid "Could not create the thread for fading out: %s"
-msgstr ""
-
-#: audacious-plugin-fadeout.c:226
-msgctxt "fade out menu action"
-msgid "Fade out"
-msgstr ""
-
-#: audacious-plugin-fadeout.c:259
-msgid "About FadeOut Plugin"
-msgstr ""
-
-#: audacious-plugin-fadeout.c:259
+#: audacious-plugin-fadeout.cc:51
 msgid ""
 "FadeOut Plugin\n"
-"By Christian Spurk 2008–2014.\n"
+"By Christian Spurk 2008–2018.\n"
 "\n"
 "Provides a menu entry for smoothly fading out any playing song before "
 "eventually stopping playback."
 msgstr ""
 
-#: audacious-plugin-fadeout.c:300
-msgid "FadeOut duration (seconds):"
+#: audacious-plugin-fadeout.cc:63
+msgid "<b>Fade out</b>"
 msgstr ""
 
-#: audacious-plugin-fadeout.c:330
-msgid "FadeOut Plugin Configuration"
+#: audacious-plugin-fadeout.cc:64
+msgid "Duration:"
 msgstr ""
 
-#: audacious-plugin-fadeout.c:331
-msgid "_Cancel"
+#: audacious-plugin-fadeout.cc:66
+msgid "seconds"
 msgstr ""
 
-#: audacious-plugin-fadeout.c:331
-msgid "_OK"
+#: audacious-plugin-fadeout.cc:75
+msgid "FadeOut"
+msgstr ""
+
+#: audacious-plugin-fadeout.cc:187
+#, c-format
+msgid "Could not create the thread for fading out: %s"
+msgstr ""
+
+#: audacious-plugin-fadeout.cc:201
+msgid "Fade out"
 msgstr ""

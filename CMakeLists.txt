@@ -1,8 +1,8 @@
 ## build file for the Audacious FadeOut plugin
-## © 2009–2014 by Christian Spurk
+## © 2009–2018 by Christian Spurk
 
 ## only tested with this version – will probably work with older versions, too
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.3.2)
 
 include(FindPkgConfig)
 include(FindGettext)
@@ -12,6 +12,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}"
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
 set(GettextTranslate_ALL "TRUE")
 include(GettextTranslate)
+include(GNUInstallDirs)
+include(GenerateExportHeader)
 
 
 ###############################
@@ -20,7 +22,7 @@ include(GettextTranslate)
 
 ## set the package name and version
 set(_pkg_name "audacious-plugin-fadeout")
-set(_pkg_version "3.4.0-1.0")
+set(_pkg_version "3.9.0-1.0")
 
 ## find the directories to which to install the plugin and its translations
 string(REGEX REPLACE "/$" "" _home_dir "$ENV{HOME}")
@@ -29,8 +31,8 @@ IF(${_home_dir} STREQUAL ${_install_base})
   set(_install_dir "${_install_base}/.local/share/audacious/Plugins")
   set(LOCALEDIR "${_install_dir}/locale")
 ELSE(${_home_dir} STREQUAL ${_install_base})
-  set(_install_dir "${_install_base}/lib/audacious/Effect")
-  set(LOCALEDIR "${_install_base}/share/locale")
+  set(_install_dir "${_install_base}/${CMAKE_INSTALL_LIBDIR}/audacious/Effect")
+  set(LOCALEDIR "${_install_base}/${CMAKE_INSTALL_LOCALEDIR}")
 ENDIF(${_home_dir} STREQUAL ${_install_base})
 
 ## translation template file
@@ -42,12 +44,16 @@ set(_pot_file ${_pkg_name}.pot)
 #####################
 
 ## create targets for compiling and linking the plugin
-PKG_SEARCH_MODULE(AUDACIOUS REQUIRED audacious>=3.4.0)
-PKG_SEARCH_MODULE(GTK REQUIRED gtk+-3.0>=3.0.0)
-add_definitions(${AUDACIOUS_CFLAGS} ${GTK_CFLAGS})
-add_definitions("'-DGETTEXT_PACKAGE=\"${_pkg_name}\"'"
-  "'-DLOCALEDIR=\"${LOCALEDIR}\"'")
-add_library("${_pkg_name}" SHARED "${_pkg_name}.c")
+PKG_SEARCH_MODULE(AUDACIOUS REQUIRED audacious>=3.9)
+PKG_SEARCH_MODULE(GLIB REQUIRED glib-2.0>=2.32)
+add_definitions(${AUDACIOUS_CFLAGS} ${GLIB_CFLAGS})
+add_definitions("'-DPACKAGE=\"${_pkg_name}\"'")
+add_library("${_pkg_name}" SHARED "${_pkg_name}.cc")
+set_target_properties("${_pkg_name}" PROPERTIES PREFIX "")
+
+## only export symbols which are marked accordingly
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+GENERATE_EXPORT_HEADER("${_pkg_name}" BASE_NAME plugin EXPORT_MACRO_NAME EXPORT)
 
 ## create targets for i18n
 add_subdirectory(po)

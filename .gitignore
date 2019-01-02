@@ -6,6 +6,8 @@ Makefile
 /.cproject
 /.project
 /.settings
-/libaudacious-plugin-fadeout.so
+/audacious-plugin-fadeout.so
+/install_manifest.txt
 /po/POTFILES
+/plugin_export.h
 
