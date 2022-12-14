@@ -1,13 +1,11 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Christian Spurk
-# This file is distributed under the same license as the Project package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2022 Christian Spurk
+# This file is distributed under the same license as the audacious-plugin-fadeout package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Project \n"
+"Project-Id-Version: audacious-plugin-fadeout \n"
 "Report-Msgid-Bugs-To: mail@code.chriki.de\n"
-"POT-Creation-Date: 2019-01-02 19:00+0100\n"
+"POT-Creation-Date: 2022-12-14 21:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +17,7 @@ msgstr ""
 #: audacious-plugin-fadeout.cc:51
 msgid ""
 "FadeOut Plugin\n"
-"By Christian Spurk 2008–2018.\n"
+"By Christian Spurk 2008–2022.\n"
 "\n"
 "Provides a menu entry for smoothly fading out any playing song before "
 "eventually stopping playback."

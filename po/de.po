@@ -1,14 +1,13 @@
 # Audacious FadeOut Plugin Localization.
-# Copyright (C) 2018 Christian Spurk
+# Copyright (C) 2022 Christian Spurk
 # This file is distributed under the same license as the plugin itself.
-# Christian Spurk <mail@code.chriki.de>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: audacious-plugin-fadeout 3.9.0-1.0\n"
 "Report-Msgid-Bugs-To: mail@code.chriki.de\n"
-"POT-Creation-Date: 2019-01-02 19:00+0100\n"
-"PO-Revision-Date: 2018-12-30 19:13+0100\n"
+"POT-Creation-Date: 2022-12-14 21:58+0100\n"
+"PO-Revision-Date: 2022-12-14 21:59+0100\n"
 "Last-Translator: Christian Spurk <mail@code.chriki.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +17,13 @@ msgstr ""
 #: audacious-plugin-fadeout.cc:51
 msgid ""
 "FadeOut Plugin\n"
-"By Christian Spurk 2008–2018.\n"
+"By Christian Spurk 2008–2022.\n"
 "\n"
 "Provides a menu entry for smoothly fading out any playing song before "
 "eventually stopping playback."
 msgstr ""
 "FadeOut Plugin\n"
-"Von Christian Spurk 2008–2018.\n"
+"Von Christian Spurk 2008–2022.\n"
 "\n"
 "Stellt einen Menüeintrag bereit, mit dem der gerade laufende Titel sanft "
 "ausgeblendet werden kann, ehe die Wiedergabe stoppt."

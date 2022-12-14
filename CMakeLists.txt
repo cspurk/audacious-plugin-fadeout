@@ -1,8 +1,9 @@
 ## build file for the Audacious FadeOut plugin
-## © 2009–2018 by Christian Spurk
+## © 2009–2022 by Christian Spurk
 
 ## only tested with this version – will probably work with older versions, too
-cmake_minimum_required(VERSION 3.3.2)
+cmake_minimum_required(VERSION 3.22.1)
+project(audacious-plugin-fadeout)
 
 include(FindPkgConfig)
 include(FindGettext)

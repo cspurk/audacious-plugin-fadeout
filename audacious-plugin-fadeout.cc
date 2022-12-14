@@ -4,7 +4,7 @@
  * Provides a menu entry for smoothly fading out any playing song before
  * eventually stopping playback.
  *
- * Copyright (C) 2008–2018  Christian Spurk
+ * Copyright (C) 2008–2022  Christian Spurk
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@
 
 static const char fadeout_about[] =
     N_("FadeOut Plugin\n"
-       "By Christian Spurk 2008–2018.\n\n"
+       "By Christian Spurk 2008–2022.\n\n"
        "Provides a menu entry for smoothly fading out any "
        "playing song before eventually stopping playback.");
 
